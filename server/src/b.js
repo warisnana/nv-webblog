@@ -1,1 +1,5 @@
-console.log('wongislam')
+let waris=require('./a')
+let ww=require('./c')
+waris()
+console.log('-------------------')
+ww()
