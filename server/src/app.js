@@ -1,12 +1,16 @@
-let express=require('express')
-const app=express()
+let express = require('express')
+let bodyParser = require('body-parser')
 
-app.get('/status',function(req,res){
-  res.send('hello nodejs server')
-})
+const app = express()
 
-let port =8081
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
-app.listen(port,function(){
-  console.log('server running on '+port)
+require('./route.js')(app)
+
+
+
+let port = 8081
+app.listen(port, function () {
+    console.log('server running on ' + port)
 })
